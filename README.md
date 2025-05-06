@@ -1,3 +1,8 @@
+For part 2 of the poe i used CSS to style my website. I was able to create a navigation bar and an overall base layout for
+all of my webpages through css. I used CSS to style all of my photos in my website for example changing the size of the photos and adding a border around each photo. I was also able to style all the text my website through CSS for example, changing the font size and changing the colour of the font.
+
+Proposal
+
 Business Overview
 Name of Business
 The name of this organization is MTech.

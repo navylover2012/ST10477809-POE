@@ -1,0 +1,90 @@
+body {
+background-image: url("../img/Minimal.jpg"); 
+background-size: 2000px;
+font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+color-scheme: black, white, Grey;
+margin: 0;
+}
+
+  @media only screen and (max-width: 600px) {
+    .item0 {grid-area: 1 / span 6;}
+    .item1 {grid-area: 2 / span 6;}
+    .Gallery {grid-area: 3 / span 6;}
+    .Paragraph {grid-area: 4 / span 6;}
+    .Item4 {grid-area: 5 / span 6;}
+  }
+
+.Item0 {
+   
+ 
+    ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        background-color: black;
+        display: flex;
+        justify-content: center;
+      }
+    
+     
+      
+      li a {
+        display: block;
+        color: silver;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+      }
+      
+      li a:hover {
+        background-color: grey;
+      }
+}
+
+.Item1 {
+    grid-area: header;
+    background-color: Black;
+    text-align: center;
+    color: Silver;
+        
+  }
+  
+  .Item1 > h1 {
+font-size: 2em;
+  }
+  .Gallery {
+    margin: 4em;
+    border:  6px solid black;
+    float: left;
+    width: 30em;
+    }
+    div.Gallery:hover {
+      border: 6px solid whitesmoke;
+    }
+    .Gallery img {
+    width: 30em;
+    height: 18em;
+    }
+    .desc {
+    padding: 15px;
+     text-align: center; 
+     color: Silver;
+    }
+  
+
+.Item4 {
+  grid-area: footer;
+  text-align: center;
+  color: silver;
+  font-size: larger;
+}
+.Paragraph {
+color: Silver;
+text-align: Center;
+font-size: 2;
+}
+.Item2 {
+  color: silver;
+}
+

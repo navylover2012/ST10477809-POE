@@ -7,10 +7,12 @@
             Contact Us
         </title>
         <link rel="stylesheet" href="style.css">
-        <link rel="stylesheet" href="style2.css">
+        <script src="Function.js"></script>
+        <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
     </head>
-<body >
-     <!--This class will be used to style the navigation bar-->
+<body>
+
+    <!--This class will be used to style the navigation bar-->
     <div class="Item0">   
     <ul>
     <!--This is the navigation bar-->    
@@ -38,49 +40,70 @@
 
 <!--This is thee paragraph that contains the logo-->
 <p>
-    <center><img src="../img/Logo.png" width="60%" height="60%"></center>
+    <center><img src="../img/Logo.png" width="50%" height="50%"></center>
 </p>
 
-
-<div class="class container--">
-    <section class="contact">
-      <div class="class container-">
-        <div class="class contact-wrapper">
-          <div class="class contact-form">
-            <h3>Send us a message</h3>
-          <form>
-            <div class="class form-group">
-              <input type="text" name="name" placeholder="Your name">
-            </div>
-            <div class="class form-group">
-            <input type="email" name="email" placeholder="Your email">
-          </div>
-          <div class="class form-group">
-            <textarea name="message" placeholder="Your message"></textarea>
-          </div>
-          <button type="submit">Send message</button>
-          </form>
-          </div>
-          <div class="class contact-info">
-            <h3>Contact Information</h3>
-            <p><i class="fas fa-phone"></i>+1 654 777 980</p>
-            <p><i class="fas fa-envelope"></i> MTech.co.za</p>
-            <p><i class="fas fa-map-marker-alt"></i>14th Tech Street</p>
-          </div>
-        </div>
-      </div>
-    </section>
+<!--This class is used to style the paragraph-->
+<div class="container">
+  <div style="text-align:center">
+    <p>You're welcome to visit our store. Maybe you'll find something you like or leave us a message :)</p>
   </div>
 
+  <div class="row">
+    <div class="column">
+      <div id="map"></div>
+    </div>
+    <div class="column">
+   <form action="/action_page.php" method="post" onsubmit="return validateForm()">
+  <label for="fname">First Name</label>
+  <input type="text" id="fname" name="firstname" placeholder="Your name.." required pattern="[A-Za-z\s]+" title="Only letters allowed">
+
+  <label for="lname">Last Name</label>
+  <input type="text" id="lname" name="lastname" placeholder="Your last name.." required pattern="[A-Za-z\s]+" title="Only letters allowed">
+
+  <label for="country">Country</label>
+  <select id="country" name="country" required>
+    <option value="">Select your country</option>
+    <option value="South Africa">South Africa</option>
+    <option value="USA">USA</option>
+    <option value="France">France</option>
+  </select>
+
+  <label for="subject">Subject</label>
+  <textarea id="subject" name="subject" placeholder="Write something.." style="height:170px" required minlength="10"></textarea>
+
+  <input type="submit" value="Submit">
+</form>
+    </div>
+  </div>
 </div>
 
-<!--This class is used to style the footer-->
+<!-- This class will be used to style the footer -->
 <div class="Item4">
-<footer>
-    <!---This is footer-->
+  <footer>
     <b>&copy; 2025 MTech quality devices. All rights reserved.</b>
-</footer>
+  </footer>
 </div>
+
+<!-- This is Leaflet Javascript -->
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+
+<!-- This is were the Leaflet Map is initialized -->
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    
+    var map = L.map('map').setView([51.505, -0.09], 13);
+
+
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: '© OpenStreetMap contributors'
+    }).addTo(map);
+
+    
+    var marker = L.marker([-25.3184, 31.0162]).addTo(map);
+    marker.bindPopup("<b>Hello there!</b><br>This is where the MTech store is located.").openPopup();
+  });
+</script>
 
 </body>
 

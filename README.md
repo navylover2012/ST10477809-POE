@@ -1,6 +1,21 @@
 For part 2 of the poe i used CSS to style my website. I was able to create a navigation bar and an overall base layout for
 all of my webpages through css. I used CSS to style all of my photos in my website for example changing the size of the photos and adding a border around each photo. I was also able to style all the text my website through CSS for example, changing the font size and changing the colour of the font.
 
+part2 update:
+i fixed my website's responsiveness.
+My footer is now consitant on all of the webpages.
+
+part3 :
+I added a dropdown search bar that is sorted alphabetically in my Forsale(products)page. When a customer searches of a product and selects it, it will show them a 
+picture of the product.
+I added a modal image gallery in my Forsale(products)page and when each image is opened it will show the image and the name of the product.
+I added a modal image gallery in services page.
+I added a leaflet map that shows the location of the business.
+I added a contact form that allows customers to enter their details and send a message to the business.
+
+
+
+
 Proposal
 
 Business Overview

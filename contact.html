@@ -48,35 +48,79 @@
   <div style="text-align:center">
     <p>You're welcome to visit our store. Maybe you'll find something you like or leave us a message :)</p>
   </div>
+<div class="row">
+  <div class="column">
+    <div id="map" style="height: 300px; background: #ddd;"></div>
+  </div>
 
-  <div class="row">
-    <div class="column">
-      <div id="map"></div>
-    </div>
-    <div class="column">
-   <form action="/action_page.php" method="post" onsubmit="return validateForm()">
-  <label for="fname">First Name</label>
-  <input type="text" id="fname" name="firstname" placeholder="Your name.." required pattern="[A-Za-z\s]+" title="Only letters allowed">
+  <div class="column">
+    <form id="contactForm">
+      <label for="fname">First Name</label>
+      <input type="text" id="fname" name="firstname" placeholder="Your name..">
 
-  <label for="lname">Last Name</label>
-  <input type="text" id="lname" name="lastname" placeholder="Your last name.." required pattern="[A-Za-z\s]+" title="Only letters allowed">
+      <label for="lname">Last Name</label>
+      <input type="text" id="lname" name="lastname" placeholder="Your last name..">
 
-  <label for="country">Country</label>
-  <select id="country" name="country" required>
-    <option value="">Select your country</option>
-    <option value="South Africa">South Africa</option>
-    <option value="USA">USA</option>
-    <option value="France">France</option>
-  </select>
+      <label for="country">Country</label>
+      <select id="country" name="country">
+        <option value="">Select your country</option>
+        <option value="South Africa">South Africa</option>
+        <option value="USA">USA</option>
+        <option value="France">France</option>
+      </select>
 
-  <label for="subject">Subject</label>
-  <textarea id="subject" name="subject" placeholder="Write something.." style="height:170px" required minlength="10"></textarea>
+      <label for="subject">Subject</label>
+      <textarea id="subject" name="subject" placeholder="Write something.." style="height:170px"></textarea>
 
-  <input type="submit" value="Submit">
-</form>
+      <input type="submit" value="Submit">
+    </form>
+
+    <!-- Successful message container -->
+    <div id="successMessage" style="display:none; margin-top: 20px; color: green; font-weight: bold;">
+      ✅ Your message has been submitted successfully!
     </div>
   </div>
 </div>
+<script>
+document.getElementById("contactForm").addEventListener("submit", function(event) {
+  event.preventDefault(); // Stop actual submission
+
+  const firstName = document.getElementById("fname").value.trim();
+  const lastName = document.getElementById("lname").value.trim();
+  const country = document.getElementById("country").value;
+  const subject = document.getElementById("subject").value.trim();
+  const messageDiv = document.getElementById("successMessage");
+
+  let errors = [];
+
+  const namePattern = /^[A-Za-z\s]+$/;
+
+  if (!firstName || !namePattern.test(firstName)) {
+    errors.push("Please enter a valid first name (letters only).");
+  }
+
+  if (!lastName || !namePattern.test(lastName)) {
+    errors.push("Please enter a valid last name (letters only).");
+  }
+
+  if (!country) {
+    errors.push("Please select a country.");
+  }
+
+  if (!subject || subject.length < 10) {
+    errors.push("Subject must be at least 10 characters long.");
+  }
+
+  if (errors.length > 0) {
+    alert(errors.join("\n"));
+    messageDiv.style.display = "none"; // Hide success if errors
+  } else {
+    // Simulate successful submission
+    messageDiv.style.display = "block";
+    this.reset(); // Optional: reset form
+  }
+});
+</script>
 
 <!-- This class will be used to style the footer -->
 <div class="Item4">

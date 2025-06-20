@@ -7,8 +7,11 @@
         Our Service
         </title>
         <link rel="stylesheet" href="style.css">
+        <script src="Function.js"></script>
     </head>
+
 <body>
+
      <!--This class will be used to style the navigation bar-->
     <div class="Item0">   
     <ul>
@@ -39,36 +42,44 @@
     <center><img src="../img/Logo.png" width="18%" height="18%"></center>
 </p>
 
+<div class="GalleryContainer2">
 <!--This class is used to style these 3 photos which represent the different types of tech sold-->
-<div class="Gallery">
+<div class="Gallery2">
 <p>
-<a target="/blank" href="../img/Laptop.jpg">
-<img src="../img/Laptop.jpg" width="35%" height="30%">
+<img src="../img/Laptop.jpg" alt="MTech sells a variety of laptops, from budget to flagship."
+ onclick="openModal(this)">
 </a>
-<div class="desc">MTech sells a variety of laptops, from budget to flagship.</div>
-</div>
-</div>
-
-<div class="Gallery">
-<a target="/blank" href="../img/Smartphone.jpg">
-<img src="../img/Smartphone.jpg" width="600" height="400">
-</a>
-<div class="desc">MTech sells a variety of smartphone brands such as samsung, apple iphone, huawei etc.</div>
+<div class="desc2">MTech sells a variety of laptops, from budget to flagship.</div>
 </div>
 
-<div class="Gallery">
-<a target="/blank" href="../img/Desktop.jpg">
-<img src="../img/Desktop.jpg" width="600" height="400">
+<div class="Gallery2">
+<img src="../img/Smartphone.jpg"  alt="MTech sells a variety of smartphone brands such as samsung, apple iphone, huawei etc."
+ onclick="openModal(this)" width="600" height="400">
 </a>
-<div class="desc">MTech sells a variety of desktop computer brands such as apple Mac, Lenovo, Hp etc.</div>
+<div class="desc2">MTech sells a variety of smartphone brands such as samsung, apple iphone, huawei etc.</div>
+</div>
+
+<div class="Gallery2">
+<img src="../img/Desktop.jpg" alt="MTech sells a variety of desktop computer brands such as apple Mac, Lenovo, Hp etc."
+ onclick="openModal(this)"  width="600" height="400">
+</a>
+<div class="desc2">MTech sells a variety of desktop computer brands such as apple Mac, Lenovo, Hp etc.</div>
 </p>
 </div>
+</div>
+
+<!-- This is the modal -->
+<div id="imageModal" class="modal">
+  <span class="close" onclick="closeModal()">&times;</span>
+  <img class="modal-content" id="modalImg">
+  <div id="modalCaption"></div>
+</div>    
 
 <!--This class is used to style the footer-->
 <div class="Item4">
     <footer>
         <!--This is thne heading-->
-        <b>&copy;2025 MTech quality devices. All rights reserved.</b>
+        <b><center>&copy; 2025 MTech quality devices. All rights reserved.</center></b>
     </footer>
     </div>
 
